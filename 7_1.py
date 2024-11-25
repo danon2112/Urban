@@ -1,4 +1,3 @@
-from os.path import split
 
 class Product:
     def __init__(self, name, weight, category):
