@@ -18,6 +18,6 @@ info = [
     'Спасибо!'
     ]
 
-result = custom_write('test.txt', info)
+result = custom_write('test_file.txt', info)
 for elem in result.items():
   print(elem)
