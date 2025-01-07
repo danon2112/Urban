@@ -12,7 +12,11 @@ def print_ip_info(ip=''):
         print('Произошла ошибка во время запроса по адресу' + request.url + ', код' + str(request.status_code))
     else:
         response = request.json()
-        print(f'Информация об IP {response['query']}\nСтрана: {response['country']} ({response['countryCode']})\nРегион: {response['regionName']}\n'
-              f'Город: {response['city']}\nЧасовой пояс: {response['timezone']}')
+        try:
+            print(
+                f'Информация об IP {response['query']}\nСтрана: {response['country']} ({response['countryCode']})\nРегион: {response['regionName']}\n'
+                f'Город: {response['city']}\nЧасовой пояс: {response['timezone']}')
+        except KeyError:
+            print('Произошла ошибка при получении информации об IP ' + ip + '. Скорее всего данного адреса не существует.')
 
-print_ip_info()
+print_ip_info('a')
