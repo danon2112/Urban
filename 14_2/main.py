@@ -39,6 +39,12 @@ user_count = cursor.fetchone()[0]
 
 cursor.execute('SELECT SUM(balance) FROM Users')
 all_balance = cursor.fetchone()[0]
+
+# cursor.execute('SELECT avg(balance) FROM Users')
+# avg = cursor.fetchone()[0]
+
+
 print(all_balance / user_count)
+# print(avg)
 
 connection.close()
